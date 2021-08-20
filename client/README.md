@@ -1,70 +1,109 @@
-# Getting Started with Create React App
+# Project Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Name
 
-## Available Scripts
+devlog - log your development!
 
-In the project directory, you can run:
+## Project Description
 
-### `npm start`
+Simple way to organize user's programming skills. Each note can be organzied by programming language, framework, library, and more. User can write notes using markup language to customize notes and add images.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Wireframes
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+![image](https://user-images.githubusercontent.com/78275456/130250604-69180aa5-7f27-4961-897a-149db92bfa0b.png)
 
-### `npm test`
+## Component Hierarchy
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![image](https://user-images.githubusercontent.com/78275456/130250705-fdaa4035-46e2-4be8-963b-c563d77c69f8.png)
 
-### `npm run build`
+## API and Data Sample
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```json
+{
+  "records": [
+    {
+      "id": "reciJnyhZcjKd50fa",
+      "fields": {
+        "comfortLevel": 5,
+        "content": "The filter() method creates a new array with all elements that pass the test implemented by the provided function.",
+        "title": "Array.filter()",
+        "category": "JavaScript"
+      },
+      "createdTime": "2021-08-19T14:43:01.000Z"
+    },
+    {
+      "id": "recnfD1rk3pY8iFOC",
+      "fields": {
+        "comfortLevel": 4,
+        "content": "The slice() method returns a shallow copy of a portion of an array into a new array object selected from start to end (end not included) where start and end represent the index of items in that array. The original array will not be modified.",
+        "title": "Array.slice()",
+        "category": "JavaScript"
+      },
+      "createdTime": "2021-08-19T14:43:01.000Z"
+    },
+    {
+      "id": "recyUlM9W1liK4J76",
+      "fields": {
+        "title": "JavaScript Callbacks",
+        "category": "JavaScript",
+        "comfortLevel": 3,
+        "content": "A callback function is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action.\n\nfunction greeting(name) {\n  alert('Hello ' + name);\n}\n\nfunction processUserInput(callback) {\n  var name = prompt('Please enter your name.');\n  callback(name);\n}\n\nprocessUserInput(greeting);"
+      },
+      "createdTime": "2021-08-19T14:43:01.000Z"
+    }
+  ]
+}
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### MVP/PostMVP
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### MVP
 
-### `npm run eject`
+- Use Axios to consume data from Airtable, and GET/render all data(notes) in homepage.
+- User can view notes by categories (Programming language / framework)
+- Post/edit notes within one component (/form)
+- Showpage (detail note) for each notes with clickable edit(axios.put) and delete(axios.delete) button
+- Implement responsive design on 2 screen sizes, using a media query.
+- Structured components layout using Flexbox.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### PostMVP
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- User can create new category on the posting/editing page. (Also it will be added to navbar)
+- Project page(component): User can present their projects. (separate airtable/api)
+- Contact me page for visitors to leave their name,email, and comment.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Project Schedule
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+| Day    | Deliverable                                                         | Status     |
+| ------ | ------------------------------------------------------------------- | ---------- |
+| Aug 19 | Prompt / Wireframes                                                 | Complete   |
+| Aug 20 | Hierarachy / README / Project Approval / Core Application Structure | Incomplete |
+| Aug 23 | Pseudocode / actual code - MVP: Home page / form / detail page      | Incomplete |
+| Aug 24 | Pseudocode / actual code - MVP: filtered view, CSS                  | Incomplete |
+| Aug 25 | Pseudocode / actual code - MVP: More CSS and media query            | Incomplete |
+| Aug 26 | PostMVP                                                             | Incomplete |
+| Aug 27 | Presentations                                                       | Incomplete |
 
-## Learn More
+## Timeframes
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+| Component                                                                             | Priority | Estimated Time | Time Invested | Actual Time |
+| ------------------------------------------------------------------------------------- | :------: | :------------: | :-----------: | :---------: |
+| Fetching API Data                                                                     |    H     |      2hrs      |     -hrs      |    -hrs     |
+| Display notes on homepage(/)                                                          |    H     |      3hrs      |     -hrs      |    -hrs     |
+| Create a Form component                                                               |    H     |      4hrs      |     -hrs      |    -hrs     |
+| Create a Detail component (showpage)                                                  |    H     |      3hrs      |     -hrs      |    -hrs     |
+| Connect a Form component from homepage(new note, .post) and from showpage(edit, .put) |    H     |      7hrs      |     -hrs      |    -hrs     |
+| Render new note's showpage when it's newly posted or editted                          |    H     |      3hrs      |     -hrs      |    -hrs     |
+| Create a filtered view (categorized) in homepage                                      |    H     |      3hrs      |     -hrs      |    -hrs     |
+| CSS(flexbox) / media query                                                            |    H     |     15hrs      |     -hrs      |    -hrs     |
+| Total                                                                                 |    H     |     40hrs      |     -hrs      |    -hrs     |
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## SWOT Analysis
 
-### Code Splitting
+### Strengths:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Weaknesses:
 
-### Analyzing the Bundle Size
+### Opportunities:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Threats:

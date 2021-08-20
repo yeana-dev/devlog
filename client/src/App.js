@@ -10,6 +10,8 @@ import { baseURL, config } from "./services";
 
 function App() {
   const [data, setData] = useState([]);
+  const [toggleFetch, setToggleFetch] = useState(false);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     const getData = async () => {
@@ -22,15 +24,24 @@ function App() {
       }
     };
     getData();
-  }, []);
+  }, [toggleFetch]);
   return (
     <>
       <Nav />
-      <Route path="/" exact></Route>
-      {data.map((note, index) => (
-        <Notes key={index} note={note} />
-      ))}
-      <Form />
+      <form id="search-form">
+        <input
+          type="text"
+          placeholder="Search"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+      </form>
+      <Route path="/" exact>
+        {data.map((note, index) => (
+          <Notes key={index} note={note} />
+        ))}
+      </Route>
+      <Form data={data} setToggleFetch={setToggleFetch} />
     </>
   );
 }
