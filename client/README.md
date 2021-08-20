@@ -100,7 +100,7 @@ api: https://api.airtable.com/v0/appvaqMmoymIoAxct/Table%201
 | Render new note's showpage when it's newly posted or editted | H | 3hrs| -hrs | -hrs |
 | Create a filtered view (categorized) in homepage | H | 3hrs| -hrs | -hrs |
 | CSS(flexbox) / media query | H | 15hrs| -hrs | -hrs |
-| Total | H | 40hrs| 5hrs | 5hrs |
+| Total | H | 40hrs| -hrs | -hrs |
 
 ## SWOT Analysis
 
