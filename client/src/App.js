@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import axios from "axios";
+import Nav from "./components/Nav";
+import Form from "./components/Form";
+import Notes from "./components/Notes";
+
+import { Route } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { baseURL, config } from "./services";
 
 function App() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const resp = await axios.get(baseURL, config);
+        console.log(resp.data.records);
+        setData(resp.data.records);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    getData();
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Nav />
+      <Route path="/" exact></Route>
+      {data.map((note, index) => (
+        <Notes key={index} note={note} />
+      ))}
+      <Form />
+    </>
   );
 }
 
