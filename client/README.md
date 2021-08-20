@@ -22,8 +22,6 @@ Simple way to organize user's programming skills. Each note can be organzied by 
 
 ## API and Data Sample
 
-api: https://api.airtable.com/v0/appvaqMmoymIoAxct/Table%201
-
 ```json
 {
     "records": [
@@ -65,10 +63,12 @@ api: https://api.airtable.com/v0/appvaqMmoymIoAxct/Table%201
 
 #### MVP 
 
-- User view all notes on homepage
+- Use Axios to consume data from Airtable, and GET/render all data(notes) in homepage.
 - User can view notes by categories (Programming language / framework)
-- Post/edit notes
-- Showpage (detail note) for each notes
+- Post/edit notes within one component (/form)
+- Showpage (detail note) for each notes with clickable edit(axios.put) and delete(axios.delete) button
+- Implement responsive design on 2 screen sizes, using a media query.
+- Structured components layout using Flexbox.
 
 #### PostMVP  
 
