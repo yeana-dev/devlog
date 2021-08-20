@@ -6,7 +6,7 @@ devlog - log your development!
 
 ## Project Description
 
-Simple way to organize user's programming skills. Each note can be organzied by programming language, framework, library, and more.
+Simple way to organize user's programming skills. Each note can be organzied by programming language, framework, library, and more. User can write notes using markup language to customize notes and add images. 
 
 ## Wireframes
 
