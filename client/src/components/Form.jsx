@@ -5,18 +5,18 @@ import { baseURL, config } from "../services";
 import axios from "axios";
 
 export default function Form(props) {
-  const [title, setTitle] = useState();
-  const [category, setCategory] = useState();
-  const [comfortLevel, setComfortLevel] = useState();
-  const [content, setContent] = useState();
+  const [title, setTitle] = useState("");
+  const [category, setCategory] = useState("");
+  const [comfortLevel, setComfortLevel] = useState(0);
+  const [content, setContent] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const newNote = {
-      title,
       category,
       comfortLevel,
       content,
+      title,
     };
     await axios.post(baseURL, { fields: newNote }, config);
     props.setToggleFetch((prevState) => !prevState);

@@ -3,8 +3,9 @@ import axios from "axios";
 import Nav from "./components/Nav";
 import Form from "./components/Form";
 import Notes from "./components/Notes";
+import Detail from "./components/Detail";
 
-import { Route } from "react-router-dom";
+import { Route, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { baseURL, config } from "./services";
 
@@ -38,10 +39,15 @@ function App() {
       </form>
       <Route path="/" exact>
         {data.map((note, index) => (
-          <Notes key={index} note={note} />
+          <Link to={`/detail/${note.id}`}>
+            <Notes key={index} note={note} />
+          </Link>
         ))}
       </Route>
       <Form data={data} setToggleFetch={setToggleFetch} />
+      <Route path="/detail/:id">
+        <Detail data={data} />
+      </Route>
     </>
   );
 }

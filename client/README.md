@@ -73,15 +73,16 @@ Simple way to organize user's programming skills. Each note can be organzied by 
 
 ## Project Schedule
 
-| Day    | Deliverable                                                         | Status     |
+star
+| Day | Deliverable | Status |
 | ------ | ------------------------------------------------------------------- | ---------- |
-| Aug 19 | Prompt / Wireframes                                                 | Complete   |
+| Aug 19 | Prompt / Wireframes | Complete |
 | Aug 20 | Hierarachy / README / Project Approval / Core Application Structure | Incomplete |
-| Aug 23 | Pseudocode / actual code - MVP: Home page / form / detail page      | Incomplete |
-| Aug 24 | Pseudocode / actual code - MVP: filtered view, CSS                  | Incomplete |
-| Aug 25 | Pseudocode / actual code - MVP: More CSS and media query            | Incomplete |
-| Aug 26 | PostMVP                                                             | Incomplete |
-| Aug 27 | Presentations                                                       | Incomplete |
+| Aug 23 | Pseudocode / actual code - MVP: Home page / form / detail page | Incomplete |
+| Aug 24 | Pseudocode / actual code - MVP: filtered view, CSS | Incomplete |
+| Aug 25 | Pseudocode / actual code - MVP: More CSS and media query | Incomplete |
+| Aug 26 | PostMVP | Incomplete |
+| Aug 27 | Presentations | Incomplete |
 
 ## Timeframes
 
