@@ -7,7 +7,7 @@ export default function Nav() {
     <nav>
       <header>{`<Devlog />`}</header>
       <ul>
-        <Link to="/form">
+        <Link to="/new">
           <li>New Note</li>
         </Link>
         <Link to="/">

@@ -1,6 +1,9 @@
-// import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { baseURL, config } from "../services";
+
+import axios from "axios";
 
 export default function Detail(props) {
   const params = useParams();
@@ -21,6 +24,11 @@ export default function Detail(props) {
     }
   }, [params.id, props.data]);
 
+  const handleDelete = async () => {
+    await axios.delete(`${baseURL}/${params.id}`, config);
+    props.setToggleFetch((prevState) => !prevState);
+  };
+
   return (
     <div className="note-detail">
       <h2>{title}</h2>
@@ -28,6 +36,10 @@ export default function Detail(props) {
       <div>{category}</div>
       <div>{comfortLevel}</div>
       <main>{content}</main>
+      <Link to={`/edit/${params.id}`}>
+        <button>Edit</button>
+      </Link>
+      <button onClick={handleDelete}>Delete</button>
     </div>
   );
 }
