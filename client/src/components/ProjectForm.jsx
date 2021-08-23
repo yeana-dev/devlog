@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { projectURL, config } from "../services";
-import { useHistory } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 
 import axios from "axios";
 
@@ -12,6 +12,22 @@ export default function NewProject(props) {
   const [description, setDescription] = useState("");
 
   const history = useHistory();
+  const params = useParams();
+
+  useEffect(() => {
+    if (params.id && props.data.length > 0) {
+      const projectEdit = props.data.find(
+        (project) => params.id === project.id
+      );
+      if (projectEdit) {
+        setTitle(projectEdit.fields.title);
+        setThumbnail(projectEdit.fields.thumbnail);
+        setDeployedSite(projectEdit.fields.deployedSite);
+        setLanguages(projectEdit.fields.languages);
+        setDescription(projectEdit.fields.description);
+      }
+    }
+  }, [params.id, props.data]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,9 +38,19 @@ export default function NewProject(props) {
       languages,
       description,
     };
-    await axios.post(projectURL, { fields: newProject }, config);
-    props.setToggleFetch((prevState) => !prevState);
-    history.push(`/project`);
+    if (params.id) {
+      await axios.put(
+        `${projectURL}/${params.id}`,
+        { fields: newProject },
+        config
+      );
+      props.setToggleFetch((prevState) => !prevState);
+      history.push(`/project/${params.id}`);
+    } else {
+      await axios.post(projectURL, { fields: newProject }, config);
+      props.setToggleFetch((prevState) => !prevState);
+      history.push(`/project`);
+    }
   };
 
   return (

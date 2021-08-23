@@ -1,8 +1,12 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams, useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { projectURL, config } from "../services";
+
+import axios from "axios";
 
 export default function ProjectDetail(props) {
   const params = useParams();
+  const history = useHistory();
 
   const [title, setTitle] = useState("");
   const [thumbnail, setThumbnail] = useState("");
@@ -21,6 +25,11 @@ export default function ProjectDetail(props) {
     }
   }, [params.id, props.data]);
 
+  const handleDelete = async () => {
+    await axios.delete(`${projectURL}/${params.id}`, config);
+    props.setToggleFetch((prevState) => !prevState);
+    history.push("/project");
+  };
   return (
     <div className="project-detail">
       <h2>{title}</h2>
@@ -28,6 +37,10 @@ export default function ProjectDetail(props) {
       <a href={deployedSite}>Deployed Site Here</a>
       <div>Used: {languages}</div>
       <article>{description}</article>
+      <Link to={`/project/${params.id}/edit`}>
+        <button>Edit</button>
+      </Link>
+      <button onClick={handleDelete}>Delete</button>
     </div>
   );
 }

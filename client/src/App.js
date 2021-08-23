@@ -81,8 +81,11 @@ function App() {
       <Route path="/new-project">
         <ProjectForm setToggleFetch={setToggleFetch} />
       </Route>
-      <Route path="/project/:id">
-        <ProjectDetail data={projectData} />
+      <Route path="/project/:id" exact>
+        <ProjectDetail data={projectData} setToggleFetch={setToggleFetch} />
+      </Route>
+      <Route path="/project/:id/edit">
+        <ProjectForm data={projectData} setToggleFetch={setToggleFetch} />
       </Route>
     </>
   );
