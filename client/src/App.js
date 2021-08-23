@@ -7,7 +7,7 @@ import Detail from "./components/Detail";
 
 // Projects
 import Project from "./components/Project";
-import NewProject from "./components/NewProject";
+import ProjectForm from "./components/ProjectForm";
 import ProjectDetail from "./components/ProjectDetail";
 
 import { Route, Link } from "react-router-dom";
@@ -79,7 +79,7 @@ function App() {
         <Project data={projectData} setToggleFetch={setToggleFetch} />
       </Route>
       <Route path="/new-project">
-        <NewProject />
+        <ProjectForm setToggleFetch={setToggleFetch} />
       </Route>
       <Route path="/project/:id">
         <ProjectDetail data={projectData} />
