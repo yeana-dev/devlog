@@ -2,7 +2,7 @@ import "./style/Nav.css";
 
 import { Link } from "react-router-dom";
 
-export default function Nav() {
+export default function Nav(props) {
   return (
     <nav>
       <header>
@@ -16,10 +16,11 @@ export default function Nav() {
           <li>View all</li>
         </Link>
         <ul>
-          <li>Javascript</li>
-          <li>React.js</li>
-          <li>CSS</li>
-          <li>Other</li>
+          {props.category.map((category) => (
+            <Link to={`/${category}`}>
+              <li>{category}</li>
+            </Link>
+          ))}
         </ul>
         <Link to="/project">
           <li>Projects</li>

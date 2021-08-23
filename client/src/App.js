@@ -1,6 +1,7 @@
 import "./App.css";
 import axios from "axios";
 import Nav from "./components/Nav";
+import FilteredResult from "./components/FilteredResult";
 import Form from "./components/Form";
 import Notes from "./components/Notes";
 import Detail from "./components/Detail";
@@ -20,6 +21,10 @@ function App() {
 
   const [toggleFetch, setToggleFetch] = useState(false);
   const [search, setSearch] = useState("");
+
+  const category = [
+    ...new Set(data.map((category) => category.fields.category)),
+  ];
 
   useEffect(() => {
     const getData = async () => {
@@ -50,7 +55,7 @@ function App() {
   }, [toggleFetch]);
   return (
     <>
-      <Nav />
+      <Nav data={data} category={category} />
       <form id="search-form">
         <input
           type="text"
@@ -65,6 +70,9 @@ function App() {
             <Notes key={index} note={note} />
           </Link>
         ))}
+      </Route>
+      <Route path="/:category">
+        <FilteredResult category={category} note={data} />
       </Route>
       <Route path="/new">
         <Form setToggleFetch={setToggleFetch} />
