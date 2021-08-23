@@ -54,12 +54,18 @@ export default function Form(props) {
         onChange={(e) => setTitle(e.target.value)}
       />
       <label htmlFor="form-category">Category</label>
-      <input
-        value={category}
+      <select
         id="form-category"
-        type="text"
+        name="form-category"
+        value={category}
         onChange={(e) => setCategory(e.target.value)}
-      />
+      >
+        <option>Select category</option>
+        <option value="JavaScript">JavaScript</option>
+        <option value="React.js">React.js</option>
+        <option value="CSS">CSS</option>
+        <option value="Other">Other</option>
+      </select>
       <label htmlFor="form-comfortLevel">Comfort Level</label>
       <input
         value={comfortLevel}
