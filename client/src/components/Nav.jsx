@@ -5,13 +5,15 @@ import { Link } from "react-router-dom";
 export default function Nav() {
   return (
     <nav>
-      <header>{`<Devlog />`}</header>
+      <header>
+        <Link to="/">{`<Devlog />`}</Link>
+      </header>
       <ul>
         <Link to="/new">
           <li>New Note</li>
         </Link>
         <Link to="/">
-          <li>Logs</li>
+          <li>View all</li>
         </Link>
         <ul>
           <li>Javascript</li>
@@ -19,7 +21,14 @@ export default function Nav() {
           <li>CSS</li>
           <li>Other</li>
         </ul>
-        <li>Projects</li>
+        <Link to="/project">
+          <li>Projects</li>
+        </Link>
+        <ul>
+          <Link to="/new-project">
+            <li>New Project</li>
+          </Link>
+        </ul>
         <li>Contact</li>
       </ul>
     </nav>

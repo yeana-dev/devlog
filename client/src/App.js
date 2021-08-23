@@ -5,12 +5,19 @@ import Form from "./components/Form";
 import Notes from "./components/Notes";
 import Detail from "./components/Detail";
 
+// Projects
+import Project from "./components/Project";
+import NewProject from "./components/NewProject";
+import ProjectDetail from "./components/ProjectDetail";
+
 import { Route, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { baseURL, config } from "./services";
+import { baseURL, projectURL, config } from "./services";
 
 function App() {
   const [data, setData] = useState([]);
+  const [projectData, setProjectData] = useState([]);
+
   const [toggleFetch, setToggleFetch] = useState(false);
   const [search, setSearch] = useState("");
 
@@ -18,13 +25,28 @@ function App() {
     const getData = async () => {
       try {
         const resp = await axios.get(baseURL, config);
-        console.log(resp.data.records);
         setData(resp.data.records);
+        console.log("These are note data");
+        console.log(resp.data.records);
       } catch (err) {
         console.error(err);
       }
     };
     getData();
+  }, [toggleFetch]);
+
+  useEffect(() => {
+    const getProjectData = async () => {
+      try {
+        const resp = await axios.get(projectURL, config);
+        setProjectData(resp.data.records);
+        console.log("These are projects data");
+        console.log(resp.data.records);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    getProjectData();
   }, [toggleFetch]);
   return (
     <>
@@ -52,6 +74,15 @@ function App() {
       </Route>
       <Route path="/detail/:id">
         <Detail data={data} setToggleFetch={setToggleFetch} />
+      </Route>
+      <Route path="/project" exact>
+        <Project data={projectData} setToggleFetch={setToggleFetch} />
+      </Route>
+      <Route path="/new-project">
+        <NewProject />
+      </Route>
+      <Route path="/project/:id">
+        <ProjectDetail data={projectData} />
       </Route>
     </>
   );
