@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { baseURL, config } from "../services";
@@ -7,6 +7,8 @@ import axios from "axios";
 
 export default function Detail(props) {
   const params = useParams();
+  const history = useHistory();
+
   const [title, setTitle] = useState("");
   const [date, setDate] = useState("");
   const [category, setCategory] = useState("");
@@ -27,6 +29,7 @@ export default function Detail(props) {
   const handleDelete = async () => {
     await axios.delete(`${baseURL}/${params.id}`, config);
     props.setToggleFetch((prevState) => !prevState);
+    history.push("/");
   };
 
   return (

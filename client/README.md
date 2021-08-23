@@ -77,7 +77,7 @@ star
 | Day | Deliverable | Status |
 | ------ | ------------------------------------------------------------------- | ---------- |
 | Aug 19 | Prompt / Wireframes | Complete |
-| Aug 20 | Hierarachy / README / Project Approval / Core Application Structure | Incomplete |
+| Aug 20 | Hierarachy / README / Project Approval / Core Application Structure | Complete |
 | Aug 23 | Pseudocode / actual code - MVP: Home page / form / detail page | Incomplete |
 | Aug 24 | Pseudocode / actual code - MVP: filtered view, CSS | Incomplete |
 | Aug 25 | Pseudocode / actual code - MVP: More CSS and media query | Incomplete |
@@ -88,12 +88,12 @@ star
 
 | Component                                                                             | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------------------------------------------------------------------------- | :------: | :------------: | :-----------: | :---------: |
-| Fetching API Data                                                                     |    H     |      2hrs      |     -hrs      |    -hrs     |
-| Display notes on homepage(/)                                                          |    H     |      3hrs      |     -hrs      |    -hrs     |
-| Create a Form component                                                               |    H     |      4hrs      |     -hrs      |    -hrs     |
-| Create a Detail component (showpage)                                                  |    H     |      3hrs      |     -hrs      |    -hrs     |
-| Connect a Form component from homepage(new note, .post) and from showpage(edit, .put) |    H     |      7hrs      |     -hrs      |    -hrs     |
-| Render new note's showpage when it's newly posted or editted                          |    H     |      3hrs      |     -hrs      |    -hrs     |
+| Fetching API Data                                                                     |    H     |      2hrs      |     2hrs      |    2hrs     |
+| Display notes on homepage(/)                                                          |    H     |      3hrs      |    1.5hrs     |   1.5hrs    |
+| Create a Form component                                                               |    H     |      4hrs      |     2hrs      |    -hrs     |
+| Create a Detail component (showpage)                                                  |    H     |      3hrs      |     2hrs      |    -hrs     |
+| Connect a Form component from homepage(new note, .post) and from showpage(edit, .put) |    H     |      7hrs      |     4hrs      |    -hrs     |
+| Render new note's showpage when it's newly posted or editted                          |    H     |      3hrs      |     2hrs      |    -hrs     |
 | Create a filtered view (categorized) in homepage                                      |    H     |      3hrs      |     -hrs      |    -hrs     |
 | CSS(flexbox) / media query                                                            |    H     |     15hrs      |     -hrs      |    -hrs     |
 | Total                                                                                 |    H     |     40hrs      |     -hrs      |    -hrs     |
