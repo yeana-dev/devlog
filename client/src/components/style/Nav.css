@@ -3,18 +3,12 @@ nav {
   width: 200px;
 }
 
-header {
-  font-size: 28px;
-  font-weight: bold;
-  letter-spacing: -3px;
-  padding: 1em 0.5em;
-}
-
-nav a,
-nav li {
+nav a {
   text-decoration: none;
-  padding: 0.5em;
+  padding: 0.7em;
   color: whitesmoke;
+  height: 20px;
+  display: block;
 }
 
 nav ul {
@@ -25,7 +19,19 @@ nav ul {
   margin: 0;
 }
 
+ul > ul {
+  padding-left: 20px;
+}
+
+header {
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: -3px;
+  padding-bottom: 10px;
+}
+
 .active {
   color: black;
   background-color: whitesmoke;
+  transition: all 300ms ease-in-out;
 }
