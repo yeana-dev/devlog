@@ -1,6 +1,6 @@
 import "./style/Nav.css";
 
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 export default function Nav(props) {
   return (
@@ -9,35 +9,37 @@ export default function Nav(props) {
         <Link to="/">{`<Devlog />`}</Link>
       </header>
       <ul>
-        <Link to="/new">
-          <li>
+        <li>
+          <NavLink to="/new" activeClassName="active">
             <i class="far fa-sticky-note"></i> New Note
-          </li>
-        </Link>
-        <Link to="/">
-          <li>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/" activeClassName="active" exact>
             <i class="fas fa-code"></i> View all
-          </li>
-        </Link>
+          </NavLink>
+        </li>
         <ul>
           {props.category.map((category) => (
-            <Link to={`/${category}`}>
-              <li>{category}</li>
-            </Link>
+            <li>
+              <NavLink to={`/${category}`} activeClassName="active">
+                {category}
+              </NavLink>
+            </li>
           ))}
         </ul>
-        <Link to="/project">
-          <li>
+        <li>
+          <NavLink to="/project" activeClassName="active">
             <i class="far fa-window-maximize"></i> Projects
-          </li>
-        </Link>
+          </NavLink>
+        </li>
         <ul>
-          <Link to="/new-project">
+          <NavLink to="/new-project" activeClassName="active">
             <li>New Project</li>
-          </Link>
+          </NavLink>
         </ul>
         <li>
-          <i class="far fa-envelope"></i> Contact
+          <i class="far fa-envelope" activeClassName="active"></i> Contact
         </li>
       </ul>
     </nav>
