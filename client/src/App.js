@@ -11,13 +11,14 @@ import Project from "./components/Project";
 import ProjectForm from "./components/ProjectForm";
 import ProjectDetail from "./components/ProjectDetail";
 
-import { Route, Link } from "react-router-dom";
+import { Route, Link, useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { baseURL, projectURL, config } from "./services";
 
 function App() {
   const [data, setData] = useState([]);
   const [projectData, setProjectData] = useState([]);
+  const [searchData, setSearchData] = useState([]);
 
   const [toggleFetch, setToggleFetch] = useState(false);
   const [search, setSearch] = useState("");
@@ -52,14 +53,16 @@ function App() {
   }, [toggleFetch]);
 
   const searchResult = [];
+  const history = useHistory();
   const handleSearch = (e) => {
     e.preventDefault();
     data.forEach((note) => {
       if (Object.values(note.fields).includes(search)) {
         searchResult.push(note);
       }
+      history.push("/search");
     });
-    setData(searchResult);
+    setSearchData(searchResult);
   };
 
   return (
@@ -79,6 +82,13 @@ function App() {
 
         <Route path="/" exact>
           {data.map((note, index) => (
+            <Link to={`/detail/${note.id}`}>
+              <Notes key={index} note={note} />
+            </Link>
+          ))}
+        </Route>
+        <Route path="/search">
+          {searchData.map((note, index) => (
             <Link to={`/detail/${note.id}`}>
               <Notes key={index} note={note} />
             </Link>
