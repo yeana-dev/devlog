@@ -22,6 +22,7 @@ function App() {
   const [toggleFetch, setToggleFetch] = useState(false);
   const [search, setSearch] = useState("");
 
+  // Soring category
   const category = [
     ...new Set(data.map((category) => category.fields.category)),
   ];
@@ -31,8 +32,6 @@ function App() {
       try {
         const resp = await axios.get(baseURL, config);
         setData(resp.data.records);
-        console.log("These are note data");
-        console.log(resp.data.records);
       } catch (err) {
         console.error(err);
       }
@@ -45,8 +44,6 @@ function App() {
       try {
         const resp = await axios.get(projectURL, config);
         setProjectData(resp.data.records);
-        console.log("These are projects data");
-        console.log(resp.data.records);
       } catch (err) {
         console.error(err);
       }

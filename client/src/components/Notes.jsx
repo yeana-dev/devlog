@@ -1,8 +1,6 @@
 import { useParams } from "react-router-dom";
 
 export default function Notes(props) {
-  const params = useParams();
-
   return (
     <div className="note-card">
       <h1>{props.note.fields.title}</h1>
