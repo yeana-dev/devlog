@@ -50,13 +50,25 @@ function App() {
     };
     getProjectData();
   }, [toggleFetch]);
+
+  const searchResult = [];
+  const handleSearch = (e) => {
+    e.preventDefault();
+    data.forEach((note) => {
+      if (Object.values(note.fields).includes(search)) {
+        searchResult.push(note);
+      }
+    });
+    setData(searchResult);
+  };
+
   return (
     <div className="app">
       <div className="left-nav">
         <Nav data={data} category={category} />
       </div>
       <div className="right">
-        <form className="search-form">
+        <form className="search-form" onSubmit={handleSearch}>
           <input
             type="text"
             placeholder="Search"
