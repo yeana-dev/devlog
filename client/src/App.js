@@ -57,12 +57,11 @@ function App() {
   const handleSearch = (e) => {
     e.preventDefault();
     data.forEach((note) => {
-      if (Object.values(note.fields).includes(search)) {
-        searchResult.push(note);
-      }
-      history.push("/search");
+      const result = Object.values(note.fields).find((e) => e.includes(search));
+      if (result !== undefined) { searchResult.push(note) }
     });
     setSearchData(searchResult);
+    history.push("/search");
   };
 
   return (
