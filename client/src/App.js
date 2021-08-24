@@ -71,7 +71,7 @@ function App() {
           </Link>
         ))}
       </Route>
-      <Route path="/:category">
+      <Route path="/:category" exact>
         <FilteredResult category={category} note={data} />
       </Route>
       <Route path="/new">
