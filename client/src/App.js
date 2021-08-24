@@ -57,8 +57,12 @@ function App() {
   const handleSearch = (e) => {
     e.preventDefault();
     data.forEach((note) => {
-      const result = Object.values(note.fields).find((e) => e.includes(search));
-      if (result !== undefined) { searchResult.push(note) }
+      const result = Object.values(note.fields).find((e) =>
+        e.toLowerCase().includes(search.toLowerCase())
+      );
+      if (result) {
+        searchResult.push(note);
+      }
     });
     setSearchData(searchResult);
     history.push("/search");
@@ -78,7 +82,6 @@ function App() {
             onChange={(e) => setSearch(e.target.value)}
           />
         </form>
-
         <Route path="/" exact>
           {data.map((note, index) => (
             <Link to={`/detail/${note.id}`}>
