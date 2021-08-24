@@ -10,10 +10,14 @@ export default function Nav(props) {
       </header>
       <ul>
         <Link to="/new">
-          <li>New Note</li>
+          <li>
+            <i class="far fa-sticky-note"></i> New Note
+          </li>
         </Link>
         <Link to="/">
-          <li>View all</li>
+          <li>
+            <i class="fas fa-code"></i> View all
+          </li>
         </Link>
         <ul>
           {props.category.map((category) => (
@@ -23,14 +27,18 @@ export default function Nav(props) {
           ))}
         </ul>
         <Link to="/project">
-          <li>Projects</li>
+          <li>
+            <i class="far fa-window-maximize"></i> Projects
+          </li>
         </Link>
         <ul>
           <Link to="/new-project">
             <li>New Project</li>
           </Link>
         </ul>
-        <li>Contact</li>
+        <li>
+          <i class="far fa-envelope"></i> Contact
+        </li>
       </ul>
     </nav>
   );
