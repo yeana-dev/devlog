@@ -1,6 +1,26 @@
 nav {
-  background-color: paleturquoise;
+  background-color: #cdbba7;
   position: fixed;
   height: 100vh;
-  width: 20vw;
+  max-width: 200px;
+}
+
+header {
+  font-family: "Major Mono Display", monospace;
+  font-size: 2em;
+  font-weight: bold;
+  letter-spacing: -3px;
+}
+
+nav a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+nav ul {
+  list-style-type: none;
+  padding-left: 1em;
+  font-family: "Roboto Mono", monospace;
+  letter-spacing: -1px;
+  font-size: 18px;
 }
