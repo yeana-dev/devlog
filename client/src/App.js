@@ -54,48 +54,53 @@ function App() {
     getProjectData();
   }, [toggleFetch]);
   return (
-    <>
-      <Nav data={data} category={category} />
-      <form id="search-form">
-        <input
-          type="text"
-          placeholder="Search"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
-      </form>
-      <Route path="/" exact>
-        {data.map((note, index) => (
-          <Link to={`/detail/${note.id}`}>
-            <Notes key={index} note={note} />
-          </Link>
-        ))}
-      </Route>
-      <Route path="/:category" exact>
-        <FilteredResult category={category} note={data} />
-      </Route>
-      <Route path="/new">
-        <Form setToggleFetch={setToggleFetch} />
-      </Route>
-      <Route path="/edit/:id">
-        <Form data={data} setToggleFetch={setToggleFetch} />
-      </Route>
-      <Route path="/detail/:id">
-        <Detail data={data} setToggleFetch={setToggleFetch} />
-      </Route>
-      <Route path="/project" exact>
-        <Project data={projectData} setToggleFetch={setToggleFetch} />
-      </Route>
-      <Route path="/new-project">
-        <ProjectForm setToggleFetch={setToggleFetch} />
-      </Route>
-      <Route path="/project/:id" exact>
-        <ProjectDetail data={projectData} setToggleFetch={setToggleFetch} />
-      </Route>
-      <Route path="/project/:id/edit">
-        <ProjectForm data={projectData} setToggleFetch={setToggleFetch} />
-      </Route>
-    </>
+    <div className="app">
+      <div className="left-nav">
+        <Nav data={data} category={category} />
+      </div>
+      <div className="right">
+        <form className="search-form">
+          <input
+            type="text"
+            placeholder="Search"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+        </form>
+
+        <Route path="/" exact>
+          {data.map((note, index) => (
+            <Link to={`/detail/${note.id}`}>
+              <Notes key={index} note={note} />
+            </Link>
+          ))}
+        </Route>
+        <Route path="/:category" exact>
+          <FilteredResult category={category} note={data} />
+        </Route>
+        <Route path="/new">
+          <Form setToggleFetch={setToggleFetch} />
+        </Route>
+        <Route path="/edit/:id">
+          <Form data={data} setToggleFetch={setToggleFetch} />
+        </Route>
+        <Route path="/detail/:id">
+          <Detail data={data} setToggleFetch={setToggleFetch} />
+        </Route>
+        <Route path="/project" exact>
+          <Project data={projectData} setToggleFetch={setToggleFetch} />
+        </Route>
+        <Route path="/new-project">
+          <ProjectForm setToggleFetch={setToggleFetch} />
+        </Route>
+        <Route path="/project/:id" exact>
+          <ProjectDetail data={projectData} setToggleFetch={setToggleFetch} />
+        </Route>
+        <Route path="/project/:id/edit">
+          <ProjectForm data={projectData} setToggleFetch={setToggleFetch} />
+        </Route>
+      </div>
+    </div>
   );
 }
 
