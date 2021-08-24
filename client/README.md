@@ -2,7 +2,7 @@
 
 ## Project Name
 
-devlog - log your development!
+devlog - log your development! (https://yeana-devlog.netlify.app/)
 
 ## Project Description
 
