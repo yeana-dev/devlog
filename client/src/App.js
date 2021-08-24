@@ -75,30 +75,34 @@ function App() {
       </div>
       <div className="right">
         <form className="search-form" onSubmit={handleSearch}>
+          <i class="fas fa-search"></i>
           <input
             type="text"
+            className="search-bar"
             placeholder="Search"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
         </form>
-        <Route path="/" exact>
-          {data.map((note, index) => (
-            <Link to={`/detail/${note.id}`}>
-              <Notes key={index} note={note} />
-            </Link>
-          ))}
-        </Route>
-        <Route path="/search">
-          {searchData.map((note, index) => (
-            <Link to={`/detail/${note.id}`}>
-              <Notes key={index} note={note} />
-            </Link>
-          ))}
-        </Route>
-        <Route path="/:category" exact>
-          <FilteredResult category={category} note={data} />
-        </Route>
+        <div className="notes">
+          <Route path="/" exact>
+            {data.map((note, index) => (
+              <Link to={`/detail/${note.id}`}>
+                <Notes key={index} note={note} />
+              </Link>
+            ))}
+          </Route>
+          <Route path="/search">
+            {searchData.map((note, index) => (
+              <Link to={`/detail/${note.id}`} className="note-card">
+                <Notes key={index} note={note} />
+              </Link>
+            ))}
+          </Route>
+          <Route path="/:category" exact>
+            <FilteredResult category={category} note={data} />
+          </Route>
+        </div>
         <Route path="/new">
           <Form setToggleFetch={setToggleFetch} />
         </Route>

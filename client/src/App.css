@@ -1,7 +1,38 @@
 .app {
   display: flex;
+  background-color: #c4bdaf;
+}
+
+.left-nav {
+  height: 100vh;
 }
 
 .right {
-  padding-left: 20vw;
+  margin: 0 auto;
+  background-color: whitesmoke;
+  width: 80%;
+  margin-left: 200px;
+}
+
+.search-form {
+  margin: 20px;
+}
+
+.search-bar {
+  background-color: transparent;
+  width: 80%;
+  border: none;
+  margin-left: 15px;
+  font-size: 18px;
+  font-family: "Roboto Mono", monospace;
+}
+
+.notes {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.note-card {
+  border: black 1px solid;
+  margin: 10px;
 }

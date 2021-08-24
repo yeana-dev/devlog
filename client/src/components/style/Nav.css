@@ -1,13 +1,9 @@
 nav {
-  background-color: #cdbba7;
   position: fixed;
-  height: 100vh;
-  max-width: 200px;
 }
 
 header {
-  font-family: "Major Mono Display", monospace;
-  font-size: 2em;
+  font-size: 30px;
   font-weight: bold;
   letter-spacing: -3px;
 }
@@ -20,7 +16,6 @@ nav a {
 nav ul {
   list-style-type: none;
   padding-left: 1em;
-  font-family: "Roboto Mono", monospace;
   letter-spacing: -1px;
   font-size: 18px;
 }
