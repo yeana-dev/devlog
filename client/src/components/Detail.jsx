@@ -21,7 +21,7 @@ export default function Detail(props) {
       setTitle(note.fields.title);
       setDate(note.createdTime);
       setCategory(note.fields.category);
-      setComfortLevel(parseInt(note.fields.comfortLevel));
+      setComfortLevel("⭐️".repeat(parseInt(note.fields.comfortLevel)));
       setContent(note.fields.content);
     }
   }, [params.id, props.data]);
