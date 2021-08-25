@@ -83,7 +83,7 @@ export default function Form(props) {
       <label htmlFor="form-content" className="form-content">
         Content
       </label>
-      <textarea
+      <input
         value={content}
         className="form-content"
         type="text"
