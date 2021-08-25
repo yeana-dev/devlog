@@ -38,6 +38,7 @@
   border: 1px solid #b3b3b3;
   box-shadow: 0 1px 4px rgb(128 128 128 / 40%);
   padding: 1em;
+  background-color: white;
 }
 
 .notes > a {
