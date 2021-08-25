@@ -25,6 +25,13 @@ ul > ul a {
   color: darkgray;
 }
 
+ul > ul a:hover,
+li > a:hover {
+  color: black;
+  transition: all 200ms ease-in-out;
+  background-color: #d3d3d3;
+}
+
 header {
   font-size: 28px;
   font-weight: bold;
