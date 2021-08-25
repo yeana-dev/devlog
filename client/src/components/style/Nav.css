@@ -21,6 +21,8 @@ nav ul {
 
 ul > ul a {
   padding-left: 2.5em;
+  background-color: #eaeaea;
+  color: darkgray;
 }
 
 header {
