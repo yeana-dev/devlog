@@ -94,7 +94,7 @@ function App() {
           </Route>
           <Route path="/search">
             {searchData.map((note, index) => (
-              <Link to={`/detail/${note.id}`} className="note-card">
+              <Link to={`/detail/${note.id}`}>
                 <Notes key={index} note={note} />
               </Link>
             ))}
