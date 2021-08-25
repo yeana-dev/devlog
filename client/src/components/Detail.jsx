@@ -1,6 +1,5 @@
 import { Link, useParams, useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
-// import { Link } from "react-router-dom";
 import { baseURL, config } from "../services";
 
 import axios from "axios";
