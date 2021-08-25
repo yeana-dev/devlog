@@ -39,7 +39,9 @@ export default function Nav(props) {
           </NavLink>
         </ul>
         <li>
-          <i class="far fa-envelope" activeClassName="active"></i> Contact
+          <NavLink to="/contact" activeClassName="active">
+            <i class="far fa-envelope" activeClassName="active"></i> Contact
+          </NavLink>
         </li>
       </ul>
     </nav>

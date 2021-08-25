@@ -5,6 +5,7 @@ import FilteredResult from "./components/FilteredResult";
 import Form from "./components/Form";
 import Notes from "./components/Notes";
 import Detail from "./components/Detail";
+import ContactForm from "./components/ContactForm";
 
 // Projects
 import Project from "./components/Project";
@@ -123,6 +124,9 @@ function App() {
         </Route>
         <Route path="/project/:id/edit">
           <ProjectForm data={projectData} setToggleFetch={setToggleFetch} />
+        </Route>
+        <Route path="/contact">
+          <ContactForm />
         </Route>
       </div>
     </div>
