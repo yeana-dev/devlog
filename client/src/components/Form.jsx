@@ -2,7 +2,10 @@ import { useState, useEffect } from "react";
 import { baseURL, config } from "../services";
 import { useParams, useHistory } from "react-router-dom";
 
+import { RatingStar } from "rating-star";
+
 import axios from "axios";
+import "./style/Form.css";
 
 export default function Form(props) {
   const [title, setTitle] = useState("");
@@ -12,6 +15,12 @@ export default function Form(props) {
 
   const params = useParams();
   const history = useHistory();
+
+  const [rating, setRating] = useState(0);
+  const onRatingChange = (score) => {
+    setRating(score);
+    setComfortLevel(score.toString());
+  };
 
   useEffect(() => {
     if (params.id && props.data.length > 0) {
@@ -33,6 +42,7 @@ export default function Form(props) {
       content,
       title,
     };
+    console.log(comfortLevel);
     if (params.id) {
       await axios.put(`${baseURL}/${params.id}`, { fields: newNote }, config);
       props.setToggleFetch((prevState) => !prevState);
@@ -45,7 +55,7 @@ export default function Form(props) {
   };
 
   return (
-    <form autoComplete="off" onSubmit={handleSubmit}>
+    <form className="new-note-form" autoComplete="off" onSubmit={handleSubmit}>
       <label htmlFor="form-title">Title</label>
       <input
         value={title}
@@ -60,17 +70,22 @@ export default function Form(props) {
         type="text"
         onChange={(e) => setCategory(e.target.value)}
       />
+
       <label htmlFor="form-comfortLevel">Comfort Level</label>
-      <input
-        value={comfortLevel}
+      <RatingStar
+        clickable
+        maxScore={5}
         id="form-comfortLevel"
-        type="number"
-        onChange={(e) => setComfortLevel(e.target.value)}
+        rating={rating}
+        onRatingChange={onRatingChange}
       />
-      <label htmlFor="form-content">Content</label>
-      <input
+
+      <label htmlFor="form-content" className="form-content">
+        Content
+      </label>
+      <textarea
         value={content}
-        id="form-content"
+        className="form-content"
         type="text"
         onChange={(e) => setContent(e.target.value)}
       />
