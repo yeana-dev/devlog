@@ -17,6 +17,7 @@ export default function Project(props) {
                   <img
                     className="project-thumbnail-preview"
                     src={project.fields.thumbnail}
+                    alt="project-thumbnail-preview"
                   />
                 }
               </div>
