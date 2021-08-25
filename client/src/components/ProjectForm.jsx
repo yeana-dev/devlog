@@ -9,7 +9,8 @@ export default function NewProject(props) {
   const [thumbnail, setThumbnail] = useState("");
   const [deployedSite, setDeployedSite] = useState("");
   const [languages, setLanguages] = useState("");
-  const [description, setDescription] = useState("");
+  const [shortDescription, setShortDescription] = useState("");
+  const [content, setContent] = useState("");
 
   const history = useHistory();
   const params = useParams();
@@ -24,7 +25,8 @@ export default function NewProject(props) {
         setThumbnail(projectEdit.fields.thumbnail);
         setDeployedSite(projectEdit.fields.deployedSite);
         setLanguages(projectEdit.fields.languages);
-        setDescription(projectEdit.fields.description);
+        setShortDescription(projectEdit.fields.shortDescription);
+        setContent(projectEdit.fields.content);
       }
     }
   }, [params.id, props.data]);
@@ -36,7 +38,8 @@ export default function NewProject(props) {
       thumbnail,
       deployedSite,
       languages,
-      description,
+      shortDescription,
+      content,
     };
     if (params.id) {
       await axios.put(
@@ -85,12 +88,20 @@ export default function NewProject(props) {
           id="languages"
           onChange={(e) => setLanguages(e.target.value)}
         />
+        <label htmlFor="description">Short/Preview Description</label>
+        <input
+          type="text"
+          value={shortDescription}
+          id="shortDescription"
+          maxlength="50"
+          onChange={(e) => setShortDescription(e.target.value)}
+        />
         <label htmlFor="description">Project Description</label>
         <input
           type="text"
-          value={description}
-          id="description"
-          onChange={(e) => setDescription(e.target.value)}
+          value={content}
+          id="content"
+          onChange={(e) => setContent(e.target.value)}
         />
         <input type="submit" />
       </form>

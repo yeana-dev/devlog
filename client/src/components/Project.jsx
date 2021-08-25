@@ -12,16 +12,17 @@ export default function Project(props) {
                 {project.fields.title}{" "}
                 <span className="date">{project.fields.date}</span>
               </div>
-              <div className="project-thumbnail">
-                {
-                  <img
-                    className="project-thumbnail-preview"
-                    src={project.fields.thumbnail}
-                    alt="project-thumbnail-preview"
-                  />
-                }
+              {
+                <img
+                  className="project-thumbnail-preview"
+                  src={project.fields.thumbnail}
+                  alt="project-thumbnail-preview"
+                />
+              }
+              <div className="shortDescription">
+                {project.fields.shortDescription}
               </div>
-              <div className="languages">{project.fields.languages}</div>
+              <div className="description">{project.fields.description}</div>
             </div>
           </Link>
         );

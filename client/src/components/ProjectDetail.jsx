@@ -3,25 +3,28 @@ import { useState, useEffect } from "react";
 import { projectURL, config } from "../services";
 
 import axios from "axios";
+import "./style/ProjectDetail.css";
 
 export default function ProjectDetail(props) {
   const params = useParams();
   const history = useHistory();
 
   const [title, setTitle] = useState("");
+  const [date, setDate] = useState("");
   const [thumbnail, setThumbnail] = useState("");
   const [deployedSite, setDeployedSite] = useState("");
-  const [languages, setLanguages] = useState("");
-  const [description, setDescription] = useState("");
+  const [shortDescription, setShortDescription] = useState("");
+  const [content, setContent] = useState("");
 
   useEffect(() => {
     if (params.id && props.data.length) {
       const project = props.data.find((detail) => detail.id === params.id);
       setTitle(project.fields.title);
+      setDate(project.fields.date);
       setThumbnail(project.fields.thumbnail);
       setDeployedSite(project.fields.deployedSite);
-      setLanguages(project.fields.languages);
-      setDescription(project.fields.description);
+      setShortDescription(project.fields.shortDescription);
+      setContent(project.fields.content);
     }
   }, [params.id, props.data]);
 
@@ -33,10 +36,12 @@ export default function ProjectDetail(props) {
   return (
     <div className="project-detail">
       <h2>{title}</h2>
-      <img src={thumbnail} alt="project thumbnail" />
+      <div>{date}</div>
       <a href={deployedSite}>Deployed Site Here</a>
-      <div>Used: {languages}</div>
-      <article>{description}</article>
+      <div>{shortDescription}</div>
+      <hr />
+      <img src={thumbnail} alt="project thumbnail" />
+      <article>{content}</article>
       <Link to={`/project/${params.id}/edit`}>
         <button>Edit</button>
       </Link>
