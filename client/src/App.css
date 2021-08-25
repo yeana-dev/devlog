@@ -35,7 +35,10 @@
 
 .note-card {
   border: black 1px solid;
-  margin: 10px;
+}
+
+.notes > a {
+  margin: 15px;
 }
 
 i {

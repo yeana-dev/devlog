@@ -5,7 +5,7 @@ nav {
 
 nav a {
   text-decoration: none;
-  padding: 0.7em;
+  padding: 1em;
   color: whitesmoke;
   height: 20px;
   display: block;
@@ -19,8 +19,8 @@ nav ul {
   margin: 0;
 }
 
-ul > ul {
-  padding-left: 20px;
+ul > ul a {
+  padding-left: 2.5em;
 }
 
 header {
