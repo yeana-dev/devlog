@@ -6,9 +6,9 @@ nav {
 nav a {
   text-decoration: none;
   padding: 1em;
-  color: whitesmoke;
   height: 20px;
   display: block;
+  color: whitesmoke;
 }
 
 nav ul {
@@ -30,6 +30,11 @@ header {
   font-weight: bold;
   letter-spacing: -3px;
   padding-bottom: 10px;
+  text-shadow: 4px 1px 1px whitesmoke;
+}
+
+header a {
+  color: black;
 }
 
 .active {

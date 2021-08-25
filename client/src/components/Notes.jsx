@@ -10,8 +10,9 @@ export default function Notes(props) {
       <small>
         {props.note.createdTime.slice(0, 10)} | {props.note.fields.category}
       </small>
-      <h3 id="note-card-comfortLevel">{comfortLevel}</h3>
       <article>{props.note.fields.content.slice(0, 250)}...</article>
+      <small>Comfort Level</small>
+      <div className="note-card-comfortLevel">{comfortLevel}</div>
     </div>
   );
 }
