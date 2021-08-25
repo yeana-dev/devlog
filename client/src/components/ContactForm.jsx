@@ -23,9 +23,9 @@ export default function ContactForm() {
     <form id="contact-form" onSubmit={handleSubmit}>
       <input type="hidden" name="contact_number" />
       <label htmlFor="name">Name</label>
-      <input type="text" name="name" />
+      <input type="text" name="from_name" />
       <label htmlFor="email">E-mail</label>
-      <input type="email" name="email" />
+      <input type="email" name="reply_to" />
       <label htmlFor="message">Message</label>
       <textarea name="message" />
       <input type="submit" />
