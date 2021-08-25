@@ -1,0 +1,38 @@
+.project-thumbnail-preview {
+  width: 500px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.project-each {
+  border: 1px solid #b3b3b3;
+  display: inline-block;
+  box-shadow: 0 1px 4px rgb(128 128 128 / 40%);
+  padding: 1em;
+  width: 40em;
+  background-color: white;
+  margin-top: 3em;
+}
+
+.project-list a {
+  text-decoration: none;
+}
+
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 15px 0;
+  margin-top: -30px;
+}
+
+.project-title {
+  color: black;
+  font-size: 22px;
+}
+
+.date {
+  color: #636363;
+  float: right;
+  font-size: 14px;
+}
