@@ -14,6 +14,17 @@
   box-shadow: 10px 0px 18px #868686;
 }
 
+#header {
+  font-size: 32px;
+  letter-spacing: -2px;
+  text-shadow: 3px 0px 1px rgb(203, 203, 203);
+  text-transform: uppercase;
+  font-style: italic;
+  color: black;
+  font-weight: 700;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
 .search-form {
   padding: 27.5px;
   background-color: #d3d3d3;

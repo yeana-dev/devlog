@@ -59,6 +59,7 @@ export default function NoteForm(props) {
 
   return (
     <form className="new-note-form" autoComplete="off" onSubmit={handleSubmit}>
+      <div id="header">{`< New Note />`}</div>
       <div className="form-top">
         <FloatingLabel
           id="form-title"
@@ -88,7 +89,8 @@ export default function NoteForm(props) {
         <Form.Control
           value={content}
           id="form-content"
-          type="text"
+          as="textarea"
+          rows={20}
           onChange={(e) => setContent(e.target.value)}
         />
       </div>

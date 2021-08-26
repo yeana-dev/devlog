@@ -2,6 +2,10 @@ import { useState, useEffect } from "react";
 import { projectURL, config } from "../services";
 import { useParams, useHistory } from "react-router-dom";
 
+import Form from "react-bootstrap/Form";
+import FloatingLabel from "react-bootstrap/FloatingLabel";
+
+import "./style/ProjectForm.css";
 import axios from "axios";
 
 export default function NewProject(props) {
@@ -58,52 +62,83 @@ export default function NewProject(props) {
 
   return (
     <div className="new-project-form">
-      <h1>New Project</h1>
+      <div id="header">{`< New Project />`}</div>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="title">Title</label>
-        <input
-          type="text"
-          value={title}
-          id="title"
-          onChange={(e) => setTitle(e.target.value)}
-        />
-        <label htmlFor="thumbnail">Thumbnail</label>
-        <input
-          type="text"
-          value={thumbnail}
-          id="thumbnail"
-          onChange={(e) => setThumbnail(e.target.value)}
-        />
-        <label htmlFor="deployedSite">Deployed site URL</label>
-        <input
-          type="text"
-          value={deployedSite}
-          id="deployedSitve"
-          onChange={(e) => setDeployedSite(e.target.value)}
-        />
-        <label htmlFor="languages">Languages/Library/Framework used</label>
-        <input
-          type="text"
-          value={languages}
-          id="languages"
-          onChange={(e) => setLanguages(e.target.value)}
-        />
-        <label htmlFor="description">Short/Preview Description</label>
-        <input
-          type="text"
-          value={shortDescription}
-          id="shortDescription"
-          maxlength="50"
-          onChange={(e) => setShortDescription(e.target.value)}
-        />
-        <label htmlFor="description">Project Description</label>
-        <input
-          type="text"
+        <div id="project-form-top">
+          <FloatingLabel
+            id="project-form-title"
+            controlId="floatingTitle"
+            label="Title"
+          >
+            <Form.Control
+              type="text"
+              placeholder="Title"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+            />
+          </FloatingLabel>
+          <FloatingLabel
+            id="project-form-deployedSite"
+            controlId="floatingDeployedSite"
+            label="Deployed Site URL"
+          >
+            <Form.Control
+              type="text"
+              placeholder="Deployed Site URL"
+              value={deployedSite}
+              onChange={(e) => setDeployedSite(e.target.value)}
+            />
+          </FloatingLabel>
+        </div>
+        <div id="project-form-middle">
+          <FloatingLabel
+            id="project-form-languages"
+            controlId="floatingLanguages"
+            label="Languages/Library/Framework used"
+          >
+            <Form.Control
+              type="text"
+              placeholder="Languages/Library/Framework used"
+              value={languages}
+              id="languages"
+              onChange={(e) => setLanguages(e.target.value)}
+            />
+          </FloatingLabel>
+          <FloatingLabel
+            id="project-form-thumbnail"
+            controlId="floatingThumbnail"
+            label="Thumbnail"
+          >
+            <Form.Control
+              type="text"
+              placeholder="Thumbnail"
+              value={thumbnail}
+              onChange={(e) => setThumbnail(e.target.value)}
+            />
+          </FloatingLabel>
+        </div>
+        <FloatingLabel
+          id="project-form-short"
+          controlId="floatingShortDescription"
+          label="Short Description / Intro : This will be shown on the list"
+        >
+          <Form.Control
+            type="text"
+            placeholder="Short Description / Intro : This will be shown on the list"
+            value={shortDescription}
+            id="shortDescription"
+            maxlength="50"
+            onChange={(e) => setShortDescription(e.target.value)}
+          />
+        </FloatingLabel>
+        <Form.Control
           value={content}
           id="content"
+          as="textarea"
+          rows={20}
           onChange={(e) => setContent(e.target.value)}
         />
-        <input type="submit" />
+        <input type="submit" id="project-form-submit" />
       </form>
     </div>
   );

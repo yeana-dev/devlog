@@ -1,8 +1,8 @@
-.new-note-form {
+.new-project-form {
   border: 1px solid #b3b3b3;
   box-shadow: 0 1px 4px rgb(128 128 128 / 40%);
   background-color: white;
-  margin: 0 30px;
+  margin: 0 30px 30px;
   padding: 2em;
   display: flex;
   flex-direction: column;
@@ -11,40 +11,30 @@
   font-size: 14px;
 }
 
-#form-title {
-  width: 60%;
+#project-form-top,
+#project-form-middle {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1em;
 }
 
-#form-category {
+#project-form-title,
+#project-form-languages {
+  width: 59%;
+}
+
+#project-form-deployedSite,
+#project-form-thumbnail {
   width: 39%;
 }
 
-#form-content {
+#project-form-short,
+#content {
+  margin-bottom: 1em;
   resize: none;
 }
 
-.form-top {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.form-bottom {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: space-between;
-}
-
-.comfort-level {
-  display: flex;
-  flex-direction: column;
-}
-
-#form-comfortLevel {
-  padding: 0;
-}
-
-#form-submit {
+#project-form-submit {
   background-color: #989898;
   border: none;
   border-radius: 8px;
@@ -54,9 +44,10 @@
   transition: all 200ms ease-in-out;
   width: 82px;
   height: 46px;
+  float: right;
 }
 
-#form-submit:hover {
+#project-form-submit:hover {
   background-color: #c4bdaf;
   transition: all 200ms ease-in-out;
 }
