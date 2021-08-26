@@ -79,7 +79,7 @@ star
 | Aug 19 | Prompt / Wireframes | Complete |
 | Aug 20 | Hierarachy / README / Project Approval / Core Application Structure | Complete |
 | Aug 23 | Pseudocode / actual code - MVP: Home page / form / detail page | Complete |
-| Aug 24 | Pseudocode / actual code - MVP: filtered view, CSS | Incomplete |
+| Aug 24 | Pseudocode / actual code - MVP: filtered view, CSS | Complete |
 | Aug 25 | Pseudocode / actual code - MVP: More CSS and media query | Incomplete |
 | Aug 26 | PostMVP | Incomplete |
 | Aug 27 | Presentations | Incomplete |
@@ -95,7 +95,7 @@ star
 | Connect a Form component from homepage(new note, .post) and from showpage(edit, .put) |    H     |      7hrs      |     5hrs      |    5hrs     |
 | Render new note's showpage when it's newly posted or editted                          |    H     |      3hrs      |     3hrs      |    3hrs     |
 | Create a filtered view (categorized) in homepage                                      |    H     |      3hrs      |     3hrs      |    3hrs     |
-| CSS(flexbox) / media query                                                            |    H     |     15hrs      |     -hrs      |    -hrs     |
+| CSS(flexbox) / media query                                                            |    H     |     15hrs      |     12hrs     |    12hrs    |
 | Total                                                                                 |    H     |     40hrs      |     -hrs      |    -hrs     |
 
 ## SWOT Analysis
