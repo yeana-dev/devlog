@@ -9,7 +9,6 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.1",
-    "bootstrap": "^5.1.0",
     "emailjs-com": "^3.2.0",
     "material-design-icons": "^3.0.1",
     "rating-star": "^1.1.0",
@@ -18,7 +17,6 @@
     "react-dom": "^17.0.2",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
-    "tailwindcss": "^2.2.7",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
