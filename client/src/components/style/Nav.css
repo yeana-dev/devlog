@@ -6,6 +6,7 @@ nav {
 nav a {
   text-decoration: none;
   padding: 1em;
+  font-weight: 700;
   height: 20px;
   display: block;
   color: whitesmoke;
@@ -16,7 +17,7 @@ nav ul {
   list-style-type: none;
   letter-spacing: -1px;
   padding: 0;
-  font-size: 18px;
+  font-size: 16px;
   margin: 0;
 }
 
@@ -28,18 +29,21 @@ ul > ul a {
 }
 
 ul > ul a:hover,
-li > a:hover {
-  color: black;
+li > a:hover,
+.active {
+  color: #c4bdaf;
+  font-weight: 800;
   transition: all 200ms ease-in-out;
   background-color: #d3d3d3;
 }
 
 header {
-  font-size: 28px;
-  font-weight: bold;
-  letter-spacing: -3px;
-  padding-bottom: 10px;
-  text-shadow: 4px 1px 1px whitesmoke;
+  font-size: 32px;
+  letter-spacing: -2px;
+  text-shadow: 7px 0px 1px whitesmoke;
+  text-transform: uppercase;
+  font-style: italic;
+  font-family: "Roboto Condensed", sans-serif;
 }
 
 header a {
@@ -47,7 +51,5 @@ header a {
 }
 
 .active {
-  color: black;
   background-color: whitesmoke;
-  transition: all 300ms ease-in-out;
 }

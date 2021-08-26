@@ -35,11 +35,18 @@
 
 .project-title {
   color: black;
-  font-size: 22px;
+  letter-spacing: -1px;
+  font-size: 28px;
+  font-weight: 600;
 }
 
 .date {
   color: #636363;
   float: right;
+  font-size: 14px;
+}
+
+.shortDescription {
+  color: rgb(99, 99, 99);
   font-size: 14px;
 }
