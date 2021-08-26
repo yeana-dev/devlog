@@ -1,7 +1,6 @@
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import Navbar from "react-bootstrap/Navbar";
-import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 
 import "bootstrap/dist/css/bootstrap.css";
@@ -15,20 +14,25 @@ export default function Navibar(props) {
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav id="nav-menu-items">
           <NavLink to="/new" className="nav-item">
-            <i class="far fa-sticky-note"></i> New Note
+            <i class="material-icons">note_add</i> New Note
           </NavLink>
           <NavLink to="/" className="nav-item" exact>
-            <i class="fas fa-code"></i> View all
+            <i class="material-icons">code</i> View all
           </NavLink>
           {props.category.map((category) => (
-            <NavLink
-              to={`/${category}`}
-              activeClassName="active"
-              className="sub-category"
-            >
+            <NavLink to={`/${category}`} className="sub-category">
               {category}
             </NavLink>
           ))}
+          <NavLink to="/project" className="nav-item">
+            <i class="material-icons">web</i> Projects
+          </NavLink>
+          <NavLink to="/new-project" className="sub-category">
+            <li>New Project</li>
+          </NavLink>
+          <NavLink to="/contact" className="nav-item">
+            <i class="material-icons">mail</i> Contact
+          </NavLink>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
@@ -63,14 +67,14 @@ export default function Navibar(props) {
     //       </NavLink>
     //     </li>
     //     <ul>
-    //       <NavLink to="/new-project" activeClassName="active">
-    //         <li>New Project</li>
-    //       </NavLink>
+    // <NavLink to="/new-project" activeClassName="active">
+    //   <li>New Project</li>
+    // </NavLink>
     //     </ul>
     //     <li>
-    //       <NavLink to="/contact" activeClassName="active">
-    //         <i class="far fa-envelope" activeClassName="active"></i> Contact
-    //       </NavLink>
+    // <NavLink to="/contact" activeClassName="active">
+    //   <i class="far fa-envelope" activeClassName="active"></i> Contact
+    // </NavLink>
     //     </li>
     //   </ul>
     // </nav>
