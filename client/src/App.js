@@ -1,6 +1,6 @@
 import "./App.css";
 import axios from "axios";
-import Nav from "./components/Nav";
+import Navibar from "./components/Navibar";
 import FilteredResult from "./components/FilteredResult";
 import Form from "./components/Form";
 import Notes from "./components/Notes";
@@ -72,7 +72,7 @@ function App() {
   return (
     <div className="app">
       <div className="left-nav">
-        <Nav data={data} category={category} />
+        <Navibar data={data} category={category} />
       </div>
       <div className="right">
         <form className="search-form" onSubmit={handleSearch}>
