@@ -2,7 +2,7 @@ import "./App.css";
 import axios from "axios";
 import Navibar from "./components/Navibar";
 import FilteredResult from "./components/FilteredResult";
-import Form from "./components/Form";
+import NoteForm from "./components/NoteForm";
 import Notes from "./components/Notes";
 import Detail from "./components/Detail";
 import ContactForm from "./components/ContactForm";
@@ -105,10 +105,10 @@ function App() {
           </Route>
         </div>
         <Route path="/new">
-          <Form setToggleFetch={setToggleFetch} />
+          <NoteForm setToggleFetch={setToggleFetch} />
         </Route>
         <Route path="/edit/:id">
-          <Form data={data} setToggleFetch={setToggleFetch} />
+          <NoteForm data={data} setToggleFetch={setToggleFetch} />
         </Route>
         <Route path="/detail/:id">
           <Detail data={data} setToggleFetch={setToggleFetch} />

@@ -2,12 +2,15 @@ import { useState, useEffect } from "react";
 import { baseURL, config } from "../services";
 import { useParams, useHistory } from "react-router-dom";
 
+import Form from "react-bootstrap/Form";
+import FloatingLabel from "react-bootstrap/FloatingLabel";
+
 import { RatingStar } from "rating-star";
 
 import axios from "axios";
-import "./style/Form.css";
+import "./style/NoteForm.css";
 
-export default function Form(props) {
+export default function NoteForm(props) {
   const [title, setTitle] = useState("");
   const [category, setCategory] = useState("");
   const [comfortLevel, setComfortLevel] = useState(0);
@@ -56,40 +59,52 @@ export default function Form(props) {
 
   return (
     <form className="new-note-form" autoComplete="off" onSubmit={handleSubmit}>
-      <label htmlFor="form-title">Title</label>
-      <input
-        value={title}
-        id="form-title"
-        type="text"
-        onChange={(e) => setTitle(e.target.value)}
-      />
-      <label htmlFor="form-category">Category</label>
-      <input
-        value={category}
-        id="form-category"
-        type="text"
-        onChange={(e) => setCategory(e.target.value)}
-      />
-
-      <label htmlFor="form-comfortLevel">Comfort Level</label>
-      <RatingStar
-        clickable
-        maxScore={5}
-        id="form-comfortLevel"
-        rating={rating}
-        onRatingChange={onRatingChange}
-      />
-
-      <label htmlFor="form-content" className="form-content">
-        Content
-      </label>
-      <input
-        value={content}
-        className="form-content"
-        type="text"
-        onChange={(e) => setContent(e.target.value)}
-      />
-      <input type="submit" />
+      <div className="form-top">
+        <FloatingLabel
+          id="form-title"
+          controlId="floatingInput"
+          label="Title"
+          className="mb-3"
+        >
+          <Form.Control
+            type="text"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            placeholder="Title"
+          />
+        </FloatingLabel>
+        <FloatingLabel
+          id="form-category"
+          controlId="floatingCategory"
+          label="Category"
+        >
+          <Form.Control
+            type="text"
+            placeholder="Category"
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+          />
+        </FloatingLabel>
+        <Form.Control
+          value={content}
+          id="form-content"
+          type="text"
+          onChange={(e) => setContent(e.target.value)}
+        />
+      </div>
+      <div className="form-bottom">
+        <div className="comfort-level">
+          <label htmlFor="form-comfortLevel">Comfort Level</label>
+          <RatingStar
+            clickable
+            maxScore={5}
+            id="form-comfortLevel"
+            rating={rating}
+            onRatingChange={onRatingChange}
+          />
+        </div>
+        <input type="submit" id="form-submit" />
+      </div>
     </form>
   );
 }
