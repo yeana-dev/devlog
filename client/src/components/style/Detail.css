@@ -2,13 +2,14 @@
   border: 1px solid #b3b3b3;
   box-shadow: 0 1px 4px rgb(128 128 128 / 40%);
   background-color: white;
-  margin: 30px;
+  margin: 0 auto 30px;
   padding: 2em;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
   font-size: 14px;
+  width: 80%;
 }
 
 #note-detail-top-btn {
@@ -92,6 +93,22 @@
 
 .note-detail-content img {
   display: block;
-  max-width: 50%;
+  max-width: 100%;
   margin: 0 auto;
+}
+
+.note-detail-content .code {
+  background-color: #262626;
+  color: rgb(255, 255, 255);
+  font-family: "Roboto Mono", monospace;
+  font-size: 14px;
+  padding: 2em;
+  margin: 15px 0;
+  border-radius: 7px;
+}
+
+@media (max-width: 768px) {
+  .note-detail {
+    width: 95%;
+  }
 }

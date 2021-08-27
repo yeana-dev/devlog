@@ -59,7 +59,24 @@ export default function NoteForm(props) {
 
   return (
     <form className="new-note-form" autoComplete="off" onSubmit={handleSubmit}>
-      <div id="header">{`< New Note />`}</div>
+      <div className="special-characters">
+        <p>
+          <span style={{ fontSize: 30 }}>✋</span> Our forms speak HTML! Please
+          use htmlspecialchars when you are using special characters.
+        </p>
+        Replace characters as below
+        <ul>
+          <li>{`& (ampersand) becomes &amp;`}</li>
+          <li>
+            {`" (double quote) becomes &quot; when ENT_NOQUOTES is not set.`}
+          </li>
+          <li>
+            {`' (single quote) becomes &#039; only when ENT_QUOTES is set.`}
+          </li>
+          <li> {`< (less than) becomes &lt;`}</li>
+          <li> {`> (greater than) becomes &gt;`}</li>
+        </ul>
+      </div>
       <div className="form-top">
         <FloatingLabel
           id="form-title"
