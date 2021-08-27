@@ -91,5 +91,7 @@
 }
 
 .note-detail-content img {
-  width: 100%;
+  display: block;
+  max-width: 50%;
+  margin: 0 auto;
 }
