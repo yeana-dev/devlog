@@ -1,7 +1,7 @@
 #nav-container {
   width: 100vw;
   background-color: #c4bdaf;
-  padding: 0;
+  padding: 8px;
 }
 
 #nav-logo {
@@ -65,6 +65,7 @@ i {
     width: 200px;
     font-family: "NanumSquare", sans-serif;
     flex-direction: column;
+    padding: 0;
   }
   .nav-item,
   .sub-category {
