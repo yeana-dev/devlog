@@ -127,7 +127,7 @@ export default function NewProject(props) {
             placeholder="Short Description / Intro : This will be shown on the list"
             value={shortDescription}
             id="shortDescription"
-            maxlength="50"
+            maxlength="200"
             onChange={(e) => setShortDescription(e.target.value)}
           />
         </FloatingLabel>

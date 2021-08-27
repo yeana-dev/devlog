@@ -52,7 +52,12 @@ export default function ProjectDetail(props) {
       </div>
       <div className="project-detail-short-desc">{shortDescription}</div>
       <img src={thumbnail} alt="project thumbnail" />
-      <article>{content}</article>
+      <div
+        className="project-detail-description"
+        dangerouslySetInnerHTML={{
+          __html: content,
+        }}
+      />
       <div className="project-detail-bottom-btn">
         <Link to={`/project/${params.id}/edit`}>
           <button>
