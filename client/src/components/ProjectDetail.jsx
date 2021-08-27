@@ -35,17 +35,34 @@ export default function ProjectDetail(props) {
   };
   return (
     <div className="project-detail">
-      <h2>{title}</h2>
-      <div>{date}</div>
-      <a href={deployedSite}>Deployed Site Here</a>
-      <div>{shortDescription}</div>
-      <hr />
+      <div className="project-detail-top">
+        <header>{title}</header>
+        <div className="project-detail-top-right">
+          <div>
+            <button className="project-detail-top-btn">DATE</button>
+            {date}
+          </div>
+          <div>
+            <button className="project-detail-top-btn">URL</button>
+            <a href={deployedSite} target="_blank" rel="noreferrer">
+              CLICK HERE
+            </a>
+          </div>
+        </div>
+      </div>
+      <div className="project-detail-short-desc">{shortDescription}</div>
       <img src={thumbnail} alt="project thumbnail" />
       <article>{content}</article>
-      <Link to={`/project/${params.id}/edit`}>
-        <button>Edit</button>
-      </Link>
-      <button onClick={handleDelete}>Delete</button>
+      <div className="project-detail-bottom-btn">
+        <Link to={`/project/${params.id}/edit`}>
+          <button>
+            <i class="material-icons">edit</i> Edit
+          </button>
+        </Link>
+        <button onClick={handleDelete}>
+          <i class="material-icons">delete</i> Delete
+        </button>
+      </div>
     </div>
   );
 }
