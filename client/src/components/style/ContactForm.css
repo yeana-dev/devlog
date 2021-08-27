@@ -1,0 +1,75 @@
+#contact-form {
+  border: 1px solid #b3b3b3;
+  box-shadow: 0 1px 4px rgb(128 128 128 / 40%);
+  background-color: white;
+  margin: 0 auto;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-size: 14px;
+  width: 70%;
+}
+
+#contact-message {
+  resize: none;
+  height: 6.5em;
+}
+
+#contact-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#contact-name,
+#contact-email,
+#contact-greeting {
+  margin: 10px;
+}
+
+.contact-message-container {
+  margin: 10px;
+}
+
+#contact-greeting {
+  background-color: #e3e3e3;
+  color: #989898;
+  padding: 2em;
+  font-size: 16px;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+#contact-submit {
+  background-color: #989898;
+  border: none;
+  border-radius: 8px;
+  color: whitesmoke;
+  padding: 0 1rem;
+  box-shadow: 3px 2px 0px rgb(128 128 128 / 20%);
+  transition: all 200ms ease-in-out;
+  width: 12%;
+  height: 3em;
+}
+
+#contact-submit:hover {
+  background-color: #c4bdaf;
+  transition: all 200ms ease-in-out;
+}
+
+#contact-bottom {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 10px;
+}
+
+.alert-success {
+  margin: 0;
+  padding: 10px;
+  width: 86%;
+  height: 3em;
+  border-radius: 8px;
+  box-shadow: 3px 2px 0px rgb(128 128 128 / 20%);
+  transition: all 200ms ease-in-out;
+}
