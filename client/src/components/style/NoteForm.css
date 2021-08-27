@@ -64,3 +64,16 @@
   background-color: #c4bdaf;
   transition: all 200ms ease-in-out;
 }
+
+@media (max-width: 768px) {
+  .form-top {
+    flex-direction: column;
+  }
+  #form-title,
+  #form-category {
+    width: 100%;
+  }
+  #form-content {
+    margin-top: 20px;
+  }
+}

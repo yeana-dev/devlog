@@ -55,3 +55,16 @@
   color: rgb(99, 99, 99);
   font-size: 14px;
 }
+
+@media (max-width: 768px) {
+  .project-list {
+    flex-direction: column;
+  }
+  .project-list a {
+    width: 95%;
+    margin: 0 auto;
+  }
+  .project-each {
+    margin-bottom: 2em;
+  }
+}

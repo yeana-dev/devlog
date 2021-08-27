@@ -75,3 +75,14 @@
   font-weight: 700;
   font-size: 12px;
 }
+
+@media (max-width: 768px) {
+  #contact-form {
+    width: 95%;
+    margin: 0 auto;
+  }
+  #contact-top {
+    display: flex;
+    flex-direction: column;
+  }
+}

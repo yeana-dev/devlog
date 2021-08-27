@@ -54,3 +54,19 @@
   background-color: #c4bdaf;
   transition: all 200ms ease-in-out;
 }
+
+@media (max-width: 768px) {
+  #project-form-top,
+  #project-form-middle {
+    flex-direction: column;
+  }
+  #project-form-top div,
+  #project-form-middle div {
+    width: 100%;
+  }
+
+  #project-form-deployedSite,
+  #project-form-thumbnail {
+    margin-top: 15px;
+  }
+}

@@ -90,7 +90,7 @@ export default function NoteForm(props) {
           value={content}
           id="form-content"
           as="textarea"
-          rows={20}
+          rows={15}
           onChange={(e) => setContent(e.target.value)}
         />
       </div>
