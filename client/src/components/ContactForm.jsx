@@ -37,6 +37,14 @@ export default function ContactForm() {
           Yeana 🇰🇷 , and this is my second project from General Assembly SEI.
           <br />
           Please feel free to send me any feedback or comment here!
+          <br />
+          <a
+            href="https://github.com/yeana-dev/devlog/tree/master/client"
+            target="_blank"
+          >
+            <i className="fab fa-github-square"></i>
+            <i className="fab fa-linkedin"></i>
+          </a>
         </div>
       </div>
       <input type="hidden" name="contact_number" />
