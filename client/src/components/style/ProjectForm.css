@@ -39,12 +39,15 @@
   border: none;
   border-radius: 8px;
   color: whitesmoke;
-  padding: 0 1rem;
+  padding: 0 2em;
   box-shadow: 3px 2px 0px rgb(128 128 128 / 20%);
   transition: all 200ms ease-in-out;
-  width: 82px;
   height: 46px;
   float: right;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 12px;
 }
 
 #project-form-submit:hover {

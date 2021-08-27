@@ -138,7 +138,9 @@ export default function NewProject(props) {
           rows={20}
           onChange={(e) => setContent(e.target.value)}
         />
-        <input type="submit" id="project-form-submit" />
+        <button type="submit" id="project-form-submit">
+          <i class="material-icons">post_add</i>SUBMIT
+        </button>
       </form>
     </div>
   );
