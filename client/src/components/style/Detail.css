@@ -84,3 +84,12 @@
   background-color: #c4bdaf;
   transition: all 200ms ease-in-out;
 }
+
+.note-detail-content {
+  font-size: 16px;
+  line-height: 2;
+}
+
+.note-detail-content img {
+  width: 100%;
+}

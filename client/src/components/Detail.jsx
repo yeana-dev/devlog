@@ -53,7 +53,10 @@ export default function Detail(props) {
         </div>
       </div>
       <main>
-        <div dangerouslySetInnerHTML={{ __html: content }} />
+        <div
+          className="note-detail-content"
+          dangerouslySetInnerHTML={{ __html: content }}
+        />
       </main>
       <div id="note-detail-bottom">
         <Link to={`/edit/${params.id}`}>
