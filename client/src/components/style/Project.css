@@ -25,13 +25,13 @@
 
 .project-list a {
   text-decoration: none;
-  width: 45%;
+  width: 47%;
+  margin: 15px;
 }
 
 .project-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
 }
 
 .project-title {
@@ -57,7 +57,7 @@
   font-size: 14px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .project-list {
     flex-direction: column;
   }
