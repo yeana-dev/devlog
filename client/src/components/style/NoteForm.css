@@ -33,6 +33,7 @@
   margin-top: 1rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .comfort-level {
@@ -49,11 +50,14 @@
   border: none;
   border-radius: 8px;
   color: whitesmoke;
-  padding: 0 1rem;
+  padding: 0 2em;
   box-shadow: 3px 2px 0px rgb(128 128 128 / 20%);
   transition: all 200ms ease-in-out;
-  width: 82px;
-  height: 46px;
+  font-weight: 700;
+  font-size: 12px;
+  height: 40px;
+  display: flex;
+  align-items: center;
 }
 
 #form-submit:hover {

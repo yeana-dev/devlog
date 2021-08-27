@@ -22,7 +22,7 @@
 
 .nav-item,
 .sub-category {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: #ffffff80;
   font-size: 14px;
   display: flex;
   align-items: center;
@@ -30,7 +30,7 @@
   padding: 1em;
   text-decoration: none;
   font-weight: 700;
-  color: rgb(125, 125, 125);
+  color: #7d7d7d;
   transition: all 200ms ease-in-out;
 }
 
