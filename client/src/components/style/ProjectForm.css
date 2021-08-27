@@ -19,12 +19,12 @@
 }
 
 #project-form-title,
-#project-form-languages {
+#project-form-thumbnail {
   width: 59%;
 }
 
 #project-form-deployedSite,
-#project-form-thumbnail {
+#project-form-date {
   width: 39%;
 }
 

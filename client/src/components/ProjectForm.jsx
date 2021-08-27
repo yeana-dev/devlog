@@ -12,7 +12,7 @@ export default function NewProject(props) {
   const [title, setTitle] = useState("");
   const [thumbnail, setThumbnail] = useState("");
   const [deployedSite, setDeployedSite] = useState("");
-  const [languages, setLanguages] = useState("");
+  const [date, setDate] = useState("");
   const [shortDescription, setShortDescription] = useState("");
   const [content, setContent] = useState("");
 
@@ -28,7 +28,7 @@ export default function NewProject(props) {
         setTitle(projectEdit.fields.title);
         setThumbnail(projectEdit.fields.thumbnail);
         setDeployedSite(projectEdit.fields.deployedSite);
-        setLanguages(projectEdit.fields.languages);
+        setDate(projectEdit.fields.date);
         setShortDescription(projectEdit.fields.shortDescription);
         setContent(projectEdit.fields.content);
       }
@@ -41,7 +41,7 @@ export default function NewProject(props) {
       title,
       thumbnail,
       deployedSite,
-      languages,
+      date,
       shortDescription,
       content,
     };
@@ -92,16 +92,16 @@ export default function NewProject(props) {
         </div>
         <div id="project-form-middle">
           <FloatingLabel
-            id="project-form-languages"
-            controlId="floatingLanguages"
-            label="Languages/Library/Framework used"
+            id="project-form-date"
+            controlId="floatingData"
+            label="Creation Time"
           >
             <Form.Control
               type="text"
-              placeholder="Languages/Library/Framework used"
-              value={languages}
-              id="languages"
-              onChange={(e) => setLanguages(e.target.value)}
+              placeholder="Creation Time"
+              value={date}
+              id="date"
+              onChange={(e) => setDate(e.target.value)}
             />
           </FloatingLabel>
           <FloatingLabel
