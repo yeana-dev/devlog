@@ -105,7 +105,9 @@ export default function NoteForm(props) {
             onRatingChange={onRatingChange}
           />
         </div>
-        <input type="submit" id="form-submit" />
+        <button type="submit" id="form-submit">
+          <i class="material-icons">post_add</i>SUBMIT
+        </button>
       </div>
     </form>
   );
