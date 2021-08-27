@@ -19,7 +19,6 @@ export default function Detail(props) {
     if (params.id && props.data.length) {
       const note = props.data.find((note) => params.id === note.id);
       const level = parseInt(note.fields.comfortLevel);
-
       setComfortLevel(Array(level).fill(<i class="material-icons">star</i>));
       setTitle(note.fields.title);
       setDate(note.createdTime.slice(0, 10));
@@ -53,7 +52,9 @@ export default function Detail(props) {
           </div>
         </div>
       </div>
-      <main>{content}</main>
+      <main>
+        <div dangerouslySetInnerHTML={{ __html: content }} />
+      </main>
       <div id="note-detail-bottom">
         <Link to={`/edit/${params.id}`}>
           <button id="note-detail-bottom-btn">

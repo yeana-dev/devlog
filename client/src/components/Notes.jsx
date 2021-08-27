@@ -10,7 +10,12 @@ export default function Notes(props) {
       <small>
         {props.note.createdTime.slice(0, 10)} | {props.note.fields.category}
       </small>
-      <article>{props.note.fields.content.slice(0, 250)}...</article>
+      <div
+        className="note-card-content"
+        dangerouslySetInnerHTML={{
+          __html: props.note.fields.content.slice(0, 300),
+        }}
+      />
       <small>Comfort Level</small>
       <div className="note-card-comfortLevel">{comfortLevel}</div>
     </div>
