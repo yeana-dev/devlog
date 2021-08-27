@@ -9,7 +9,7 @@ import "./style/Navibar.css";
 export default function Navibar(props) {
   return (
     <Navbar expand="lg" fixed="top" id="nav-container">
-      <Nav.Link id="nav-logo" to="/">{`<Devlog />`}</Nav.Link>
+      <NavLink id="nav-logo" to="/">{`<Devlog />`}</NavLink>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav id="nav-menu-items">
