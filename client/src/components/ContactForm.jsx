@@ -41,8 +41,15 @@ export default function ContactForm() {
           <a
             href="https://github.com/yeana-dev/devlog/tree/master/client"
             target="_blank"
+            rel="noreferrer"
           >
             <i className="fab fa-github-square"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/yeana-cho-330312113/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <i className="fab fa-linkedin"></i>
           </a>
         </div>
