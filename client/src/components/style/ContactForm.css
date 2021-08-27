@@ -49,8 +49,9 @@
   padding: 0 1rem;
   box-shadow: 3px 2px 0px rgb(128 128 128 / 20%);
   transition: all 200ms ease-in-out;
-  width: 12%;
-  height: 3em;
+  font-weight: 700;
+  font-size: 12px;
+  height: 40px;
 }
 
 #contact-submit:hover {
@@ -68,8 +69,9 @@
   margin: 0;
   padding: 10px;
   width: 86%;
-  height: 3em;
   border-radius: 8px;
   box-shadow: 3px 2px 0px rgb(128 128 128 / 20%);
   transition: all 200ms ease-in-out;
+  font-weight: 700;
+  font-size: 12px;
 }

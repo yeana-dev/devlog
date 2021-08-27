@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { baseURL, config } from "../services";
 
 import axios from "axios";
+import "./style/Detail.css";
 
 export default function Detail(props) {
   const params = useParams();
@@ -17,10 +18,12 @@ export default function Detail(props) {
   useEffect(() => {
     if (params.id && props.data.length) {
       const note = props.data.find((note) => params.id === note.id);
+      const level = parseInt(note.fields.comfortLevel);
+
+      setComfortLevel(Array(level).fill(<i class="material-icons">star</i>));
       setTitle(note.fields.title);
-      setDate(note.createdTime);
+      setDate(note.createdTime.slice(0, 10));
       setCategory(note.fields.category);
-      setComfortLevel("⭐️".repeat(parseInt(note.fields.comfortLevel)));
       setContent(note.fields.content);
     }
   }, [params.id, props.data]);
@@ -33,15 +36,35 @@ export default function Detail(props) {
 
   return (
     <div className="note-detail">
-      <h2>{title}</h2>
-      <small>{date}</small>
-      <div>{category}</div>
-      <div>{comfortLevel}</div>
+      <div id="note-detail-top">
+        <h2 id="note-detail-title">{title}</h2>
+        <div id="note-detail-right">
+          <div id="note-detail-date">
+            <button id="note-detail-top-btn">DATE</button>
+            {date}
+          </div>
+          <div id="note-detail-category">
+            <button id="note-detail-top-btn">CATEGORY</button>
+            {category}
+          </div>
+          <div id="note-detail-comfortLevel">
+            <button id="note-detail-top-btn">COMFORT LEVEL</button>
+            {comfortLevel}
+          </div>
+        </div>
+      </div>
       <main>{content}</main>
-      <Link to={`/edit/${params.id}`}>
-        <button>Edit</button>
-      </Link>
-      <button onClick={handleDelete}>Delete</button>
+      <div id="note-detail-bottom">
+        <Link to={`/edit/${params.id}`}>
+          <button id="note-detail-bottom-btn">
+            <i class="material-icons">edit</i>EDIT
+          </button>
+        </Link>
+        <button id="note-detail-bottom-btn" onClick={handleDelete}>
+          <i class="material-icons">delete</i>
+          DELETE
+        </button>
+      </div>
     </div>
   );
 }

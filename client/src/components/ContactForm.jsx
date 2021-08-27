@@ -59,7 +59,7 @@ export default function ContactForm() {
         </FloatingLabel>
       </div>
       <div id="contact-bottom">
-        <input type="submit" id="contact-submit" />
+        <input type="submit" id="contact-submit" value="SUBMIT" />
         <Alert variant="success" id="contact-alert" show={show}>
           Message Sent!
         </Alert>

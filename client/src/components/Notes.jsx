@@ -2,7 +2,7 @@ import "./style/Notes.css";
 
 export default function Notes(props) {
   const level = parseInt(props.note.fields.comfortLevel);
-  const comfortLevel = Array(level).fill(<i class="fas fa-lightbulb"></i>);
+  const comfortLevel = Array(level).fill(<i class="material-icons">star</i>);
 
   return (
     <div className="note-card">

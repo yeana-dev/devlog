@@ -13,9 +13,10 @@
   font-size: 12px;
 }
 
-.note-card .fas {
-  display: inline;
-  padding-right: 5px;
+.note-card i {
+  padding: 0;
+  font-size: 14px;
+  color: orange;
 }
 
 .note-card article {
