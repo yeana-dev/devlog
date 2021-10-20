@@ -82,7 +82,7 @@ star
 | Aug 24 | Pseudocode / actual code - MVP: filtered view, CSS | Complete |
 | Aug 25 | Pseudocode / actual code - MVP: More CSS and media query | Complete |
 | Aug 26 | PostMVP | Complete |
-| Aug 27 | Presentations | Incomplete |
+| Aug 27 | Presentations | Complete |
 
 ## Timeframes
 
@@ -102,8 +102,14 @@ star
 
 ### Strengths:
 
+- By using gained knowledges from previous project about array methods, Displaying each different categories on the navbar was easier than I thought.
+
 ### Weaknesses:
+
+- Customizing bootstrap's CSS. Need to learn how to make hamburger collapsible navbar in pure JavaScript
+- Need to integrate text editor instead of using dangerouslysetinnerhtml
 
 ### Opportunities:
 
-### Threats:
+- Learned how to incorporate different npm packages by installing three different npm packages.
+- First time using Bootstrap. Fascinated by how easy to layout responsive navbar.
