@@ -1,8 +1,6 @@
 import { NavLink } from "react-router-dom";
-
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-
 import "bootstrap/dist/css/bootstrap.css";
 import "./style/Navibar.css";
 
@@ -19,6 +17,7 @@ export default function Navibar(props) {
           <NavLink to="/" className="nav-item" exact>
             <i class="material-icons">code</i> View all
           </NavLink>
+          {/* List a nav item for each category user created */}
           {props.category.map((category) => (
             <NavLink to={`/${category}`} className="sub-category">
               {category}
@@ -36,47 +35,5 @@ export default function Navibar(props) {
         </Nav>
       </Navbar.Collapse>
     </Navbar>
-
-    // <nav>
-    //   <header>
-    //     <Link to="/">{`<Devlog />`}</Link>
-    //   </header>
-    //   <ul>
-    //     <li>
-    //       <NavLink to="/new" activeClassName="active">
-    //         <i class="far fa-sticky-note"></i> New Note
-    //       </NavLink>
-    //     </li>
-    //     <li>
-    //       <NavLink to="/" activeClassName="active" exact>
-    //         <i class="fas fa-code"></i> View all
-    //       </NavLink>
-    //     </li>
-    //     <ul>
-    //       {props.category.map((category) => (
-    //         <li>
-    //           <NavLink to={`/${category}`} activeClassName="active">
-    //             {category}
-    //           </NavLink>
-    //         </li>
-    //       ))}
-    //     </ul>
-    //     <li>
-    //       <NavLink to="/project" activeClassName="active">
-    //         <i class="far fa-window-maximize"></i> Projects
-    //       </NavLink>
-    //     </li>
-    //     <ul>
-    // <NavLink to="/new-project" activeClassName="active">
-    //   <li>New Project</li>
-    // </NavLink>
-    //     </ul>
-    //     <li>
-    // <NavLink to="/contact" activeClassName="active">
-    //   <i class="far fa-envelope" activeClassName="active"></i> Contact
-    // </NavLink>
-    //     </li>
-    //   </ul>
-    // </nav>
   );
 }
