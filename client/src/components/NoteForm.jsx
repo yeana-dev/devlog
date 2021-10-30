@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 import { baseURL, config } from "../services";
 import { useParams, useHistory } from "react-router-dom";
-
+import "@toast-ui/editor/dist/toastui-editor.css";
+import { Editor } from "@toast-ui/react-editor";
 import Form from "react-bootstrap/Form";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
-
 import { RatingStar } from "rating-star";
-
 import axios from "axios";
 import "./style/NoteForm.css";
+import React from "react";
 
 export default function NoteForm(props) {
   const [title, setTitle] = useState("");
@@ -32,8 +32,9 @@ export default function NoteForm(props) {
         setTitle(noteEdit.fields.title);
         setCategory(noteEdit.fields.category);
         setComfortLevel(noteEdit.fields.comfortLevel);
-        setContent(noteEdit.fields.content);
+        // setContent(noteEdit.fields.content);
       }
+      editorRef.current.getInstance().setHTML(noteEdit.fields.content);
     }
   }, [params.id, props.data]);
 
@@ -45,7 +46,7 @@ export default function NoteForm(props) {
       content,
       title,
     };
-    console.log(comfortLevel);
+
     if (params.id) {
       await axios.put(`${baseURL}/${params.id}`, { fields: newNote }, config);
       props.setToggleFetch((prevState) => !prevState);
@@ -57,26 +58,16 @@ export default function NoteForm(props) {
     }
   };
 
+  const editorRef = React.createRef();
+  const handleContentChange = () => {
+    setContent((prevState) => ({
+      ...prevState,
+      content: editorRef.current.getInstance().getHTML(),
+    }));
+  };
+
   return (
     <form className="new-note-form" autoComplete="off" onSubmit={handleSubmit}>
-      <div className="special-characters">
-        <p>
-          <span style={{ fontSize: 30 }}>✋</span> Our forms speak HTML! Please
-          use htmlspecialchars when you are using special characters.
-        </p>
-        Replace characters as below
-        <ul>
-          <li>{`& (ampersand) becomes &amp;`}</li>
-          <li>
-            {`" (double quote) becomes &quot; when ENT_NOQUOTES is not set.`}
-          </li>
-          <li>
-            {`' (single quote) becomes &#039; only when ENT_QUOTES is set.`}
-          </li>
-          <li> {`< (less than) becomes &lt;`}</li>
-          <li> {`> (greater than) becomes &gt;`}</li>
-        </ul>
-      </div>
       <div className="form-top">
         <FloatingLabel
           id="form-title"
@@ -103,13 +94,18 @@ export default function NoteForm(props) {
             onChange={(e) => setCategory(e.target.value)}
           />
         </FloatingLabel>
-        <Form.Control
-          value={content}
-          id="form-content"
-          as="textarea"
-          rows={15}
-          onChange={(e) => setContent(e.target.value)}
-        />
+        <div id="toast-ui-editor">
+          <Editor
+            name="content"
+            value={content}
+            previewStyle="vertical"
+            height="500px"
+            initialEditType="wysiwyg"
+            useCommandShortcut={true}
+            ref={editorRef}
+            onChange={handleContentChange}
+          />
+        </div>
       </div>
       <div className="form-bottom">
         <div className="comfort-level">
