@@ -19,12 +19,8 @@
   width: 39%;
 }
 
-#form-content {
-  resize: none;
-  background-color: #262626;
-  color: rgb(255, 255, 255);
-  font-family: "Roboto Mono", monospace;
-  font-size: 14px;
+#toast-ui-editor {
+  width: 100%;
 }
 
 .form-top {
