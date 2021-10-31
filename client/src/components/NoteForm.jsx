@@ -11,14 +11,13 @@ import "./style/NoteForm.css";
 import React from "react";
 
 export default function NoteForm(props) {
+  const params = useParams();
+  const history = useHistory();
+
   const [title, setTitle] = useState("");
   const [category, setCategory] = useState("");
   const [comfortLevel, setComfortLevel] = useState(0);
   const [content, setContent] = useState("");
-
-  const params = useParams();
-  const history = useHistory();
-
   const [rating, setRating] = useState(0);
   const onRatingChange = (score) => {
     setRating(score);
@@ -26,14 +25,18 @@ export default function NoteForm(props) {
   };
 
   useEffect(() => {
+    // If there is an id in the parameter which means the user is trying to edit the post,
     if (params.id && props.data.length > 0) {
+      // we will need to see if there is an actual data from the airtable by searching corresponding id from data (data we got from props)
       const noteEdit = props.data.find((note) => params.id === note.id);
+      // If there is a corresponding note from data, insert the data into input forms into corresponding columns.
       if (noteEdit) {
         setTitle(noteEdit.fields.title);
         setCategory(noteEdit.fields.category);
         setComfortLevel(noteEdit.fields.comfortLevel);
-        // setContent(noteEdit.fields.content);
       }
+      // I am using text editor instead of input/textarea.
+      // I will need to insert the existing data into text editor using following method:
       editorRef.current.getInstance().setHTML(noteEdit.fields.content);
     }
   }, [params.id, props.data]);
@@ -46,24 +49,29 @@ export default function NoteForm(props) {
       content,
       title,
     };
-
     if (params.id) {
+      // If there is an id parameter, meaning the user is trying to edit the data
+      // Execute PUT method
       await axios.put(`${baseURL}/${params.id}`, { fields: newNote }, config);
+      // Since our data has been changed, switch the toggle so the updated data renders
       props.setToggleFetch((prevState) => !prevState);
+      // Show the user the detail screen of the post they just updated
       history.push(`/detail/${params.id}`);
     } else {
+      // If the user is not updating, meaing the user is creating a new post
+      // Execute POST method
       await axios.post(baseURL, { fields: newNote }, config);
       props.setToggleFetch((prevState) => !prevState);
+      // Redirect the user to the list of notes
       history.push("/");
     }
   };
 
+  // Because I am using text editor, I need to setState the content
+
   const editorRef = React.createRef();
   const handleContentChange = () => {
-    setContent((prevState) => ({
-      ...prevState,
-      content: editorRef.current.getInstance().getHTML(),
-    }));
+    setContent(editorRef.current.getInstance().getHTML());
   };
 
   return (
