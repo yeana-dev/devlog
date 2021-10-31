@@ -67,8 +67,7 @@ export default function NoteForm(props) {
     }
   };
 
-  // Because I am using text editor, I need to setState the content
-
+  // Because I am using text editor, I need to setState the content using following method:
   const editorRef = React.createRef();
   const handleContentChange = () => {
     setContent(editorRef.current.getInstance().getHTML());
@@ -102,6 +101,7 @@ export default function NoteForm(props) {
             onChange={(e) => setCategory(e.target.value)}
           />
         </FloatingLabel>
+        {/* Using Toast UI Editor*/}
         <div id="toast-ui-editor">
           <Editor
             name="content"
