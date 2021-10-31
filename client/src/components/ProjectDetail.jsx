@@ -1,7 +1,7 @@
 import { Link, useParams, useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { projectURL, config } from "../services";
-
+import parse from "html-react-parser";
 import axios from "axios";
 import "./style/ProjectDetail.css";
 
@@ -52,12 +52,7 @@ export default function ProjectDetail(props) {
       </div>
       <div className="project-detail-short-desc">{shortDescription}</div>
       <img src={thumbnail} alt="project thumbnail" />
-      <div
-        className="project-detail-description"
-        dangerouslySetInnerHTML={{
-          __html: content,
-        }}
-      />
+      <div className="project-detail-description">{parse(content)}</div>
       <div className="project-detail-bottom-btn">
         <Link to={`/project/${params.id}/edit`}>
           <button>
