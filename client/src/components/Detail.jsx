@@ -1,7 +1,7 @@
 import { Link, useParams, useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { baseURL, config } from "../services";
-
+import parse from "html-react-parser";
 import axios from "axios";
 import "./style/Detail.css";
 
@@ -53,10 +53,7 @@ export default function Detail(props) {
         </div>
       </div>
       <main>
-        <div
-          className="note-detail-content"
-          dangerouslySetInnerHTML={{ __html: content }}
-        />
+        <div className="note-detail-content">{parse(content)}</div>
       </main>
       <div id="note-detail-bottom">
         <Link to={`/edit/${params.id}`}>
